@@ -20,9 +20,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 .hero-card{border-radius:20px;padding:28px 24px;position:relative;overflow:hidden;}
 .hero-card.inv{background:linear-gradient(135deg,#1a2e1a,#0f2318);border:1px solid rgba(74,222,128,0.3);}
 .hero-card.gas{background:linear-gradient(135deg,#1a1a2e,#0f1323);border:1px solid rgba(96,165,250,0.3);}
-.hero-card.sal{border:1px solid var(--border);}
-.hero-card.sal.ok{background:linear-gradient(135deg,#1a2e1a,#0f2318);border-color:rgba(74,222,128,0.3);}
-.hero-card.sal.warn{background:linear-gradient(135deg,#2e1a0f,#231308);border-color:rgba(251,146,60,0.5);}
+.hero-card.sal.ok{background:linear-gradient(135deg,#1a2e1a,#0f2318);border:1px solid rgba(74,222,128,0.3);}
+.hero-card.sal.warn{background:linear-gradient(135deg,#2e1a0f,#231308);border:1px solid rgba(251,146,60,0.5);}
 .hero-label{font-size:11px;text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:10px;}
 .hero-card.inv .hero-label,.hero-card.sal.ok .hero-label{color:rgba(74,222,128,0.7);}
 .hero-card.gas .hero-label{color:rgba(96,165,250,0.7);}
@@ -50,27 +49,22 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 .v::before{background:linear-gradient(90deg,#a78bfa,#8b5cf6);}.t::before{background:linear-gradient(90deg,#34d399,#10b981);}
 .kpi-icon{font-size:20px;margin-bottom:8px;}.kpi-lbl{font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);font-weight:600;margin-bottom:4px;}
 .kpi-val{font-size:19px;font-weight:800;letter-spacing:-.5px;}
-.g .kpi-val{color:#4ade80;}.b .kpi-val{color:#60a5fa;}.p .kpi-val{color:#f472b6;}
-.o .kpi-val{color:#fb923c;}.v .kpi-val{color:#a78bfa;}.t .kpi-val{color:#34d399;}
+.g .kpi-val{color:#4ade80;}.b .kpi-val{color:#60a5fa;}.p .kpi-val{color:#f472b6;}.o .kpi-val{color:#fb923c;}.v .kpi-val{color:#a78bfa;}.t .kpi-val{color:#34d399;}
 .kpi-sub{font-size:10px;color:var(--muted);margin-top:4px;}
 .chart-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-bottom:14px;}
 .chart-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;}
-.c12{grid-column:span 12;}.c8{grid-column:span 8;}.c7{grid-column:span 7;}
-.c6{grid-column:span 6;}.c5{grid-column:span 5;}.c4{grid-column:span 4;}.c3{grid-column:span 3;}
+.c12{grid-column:span 12;}.c8{grid-column:span 8;}.c7{grid-column:span 7;}.c6{grid-column:span 6;}.c5{grid-column:span 5;}.c4{grid-column:span 4;}.c3{grid-column:span 3;}
 .ct{font-size:13px;font-weight:700;margin-bottom:3px;}.cs{font-size:11px;color:var(--muted);margin-bottom:14px;}
 .prog-item{margin-bottom:11px;}.prog-header{display:flex;justify-content:space-between;margin-bottom:4px;}
 .prog-lbl{font-size:11px;font-weight:500;}.prog-v{font-size:11px;color:var(--muted);font-weight:600;}
-.prog-bar{height:5px;background:var(--border);border-radius:99px;overflow:hidden;}
-.prog-fill{height:100%;border-radius:99px;}
+.prog-bar{height:5px;background:var(--border);border-radius:99px;overflow:hidden;}.prog-fill{height:100%;border-radius:99px;}
 .tw{overflow-x:auto;}
 table{width:100%;border-collapse:collapse;font-size:12px;}
 th{text-align:left;padding:8px 10px;font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:600;border-bottom:1px solid var(--border);}
 td{padding:8px 10px;border-bottom:1px solid rgba(42,45,62,.4);}
-tr:last-child td{border-bottom:none;}
-tr:hover td{background:rgba(255,255,255,.02);}
+tr:last-child td{border-bottom:none;}tr:hover td{background:rgba(255,255,255,.02);}
 .tag{display:inline-block;padding:2px 7px;border-radius:99px;font-size:10px;font-weight:600;}
-.tg{background:rgba(74,222,128,.15);color:#4ade80;}.to{background:rgba(251,146,60,.15);color:#fb923c;}
-.tb{background:rgba(96,165,250,.15);color:#60a5fa;}
+.tg{background:rgba(74,222,128,.15);color:#4ade80;}.to{background:rgba(251,146,60,.15);color:#fb923c;}.tb{background:rgba(96,165,250,.15);color:#60a5fa;}
 .footer{text-align:center;margin-top:20px;color:var(--muted);font-size:11px;padding-top:14px;border-top:1px solid var(--border);}
 .loading{text-align:center;padding:60px;color:var(--muted);font-size:14px;}
 .spin{display:inline-block;width:32px;height:32px;border:3px solid var(--border);border-top-color:#4ade80;border-radius:50%;animation:spin 1s linear infinite;margin-bottom:12px;}
@@ -87,11 +81,26 @@ tr:hover td{background:rgba(255,255,255,.02);}
 <div class="footer" id="footer" style="display:none">Dashboard automatico · Vivero La Bonanza · Google Sheets · Datos en tiempo real</div>
 <script>
 const SID='1Zo_jUPD0GEvDO9R67yU5Edv3JmOOi154iKFJ8pjKm9k';
-const PROXY='https://corsproxy.io/?';
+const PROXY='https://api.codetabs.com/v1/proxy?quest=';
 const COLORS=['#4ade80','#60a5fa','#f472b6','#fb923c','#a78bfa','#34d399','#fbbf24','#38bdf8','#f87171','#c084fc'];
 const G='rgba(255,255,255,0.05)',TC='#94a3b8';
-function parseCSV(csv){const L=csv.split('\n'),H=pl(L[0]),R=[];for(let i=1;i<L.length;i++){if(!L[i].trim())continue;const v=pl(L[i]);if(v.every(x=>!x.trim()))continue;const o={};H.forEach((h,j)=>{o[h.trim()]=(v[j]||'').trim();});R.push(o);}return R;}
-function pl(row){const r=[];let c='',q=false;for(let i=0;i<row.length;i++){if(row[i]==='"'){if(q&&row[i+1]==='"'){c+='"';i++;}else q=!q;}else if(row[i]===','&&!q){r.push(c);c='';}else c+=row[i];}r.push(c);return r;}
+function parseCSV(csv){
+  const L=csv.split('\n'),H=pl(L[0]),R=[];
+  for(let i=1;i<L.length;i++){
+    if(!L[i].trim())continue;
+    const v=pl(L[i]);
+    if(v.every(x=>!x.trim()))continue;
+    const o={};H.forEach((h,j)=>{o[h.trim()]=(v[j]||'').trim();});R.push(o);
+  }return R;
+}
+function pl(row){
+  const r=[];let c='',q=false;
+  for(let i=0;i<row.length;i++){
+    if(row[i]==='"'){if(q&&row[i+1]==='"'){c+='"';i++;}else q=!q;}
+    else if(row[i]===','&&!q){r.push(c);c='';}
+    else c+=row[i];
+  }r.push(c);return r;
+}
 function pm(s){if(!s)return 0;return parseFloat(s.replace(/[\$,\s]/g,'').replace(/\./g,''))||0;}
 function fmt(n){return'$'+Math.round(n).toLocaleString('es-CO');}
 function ts(s){if(!s)return 0;const p=s.split('/');if(p.length<3)return 0;return new Date(parseInt(p[2]),parseInt(p[1])-1,parseInt(p[0])).getTime();}
@@ -100,21 +109,46 @@ async function fs(n){
   const url='https://docs.google.com/spreadsheets/d/'+SID+'/gviz/tq?tqx=out:csv&sheet='+encodeURIComponent(n);
   try{
     const r=await fetch(PROXY+encodeURIComponent(url));
-    if(!r.ok)throw new Error('proxy failed');
-    return r.text();
-  }catch(e){
-    const r2=await fetch(url);
-    return r2.text();
+    const t=await r.text();
+    if(t.trim().startsWith('"'))return t;
+    throw new Error('bad proxy response');
+  }catch(e){const r2=await fetch(url);return r2.text();}
+}
+// ROBUST: parse control totals directly from raw CSV lines
+function parseCtrl(rawCSV){
+  let invT=0,gasT=0,saldo=0;
+  const lines=rawCSV.split('\n');
+  for(const line of lines){
+    const cols=pl(line);
+    const k=(cols[0]||'').replace(/[""]/g,'').trim();
+    const v=pm((cols[1]||'').replace(/[""]/g,''));
+    if(k.includes('Inversi')&&k.toLowerCase().includes('total')&&v>0)invT=v;
+    else if((k.startsWith('Gastos Totales')||k.startsWith('Gastos totales'))&&v>0)gasT=v;
+    else if(k.toLowerCase().includes('saldo'))saldo=v;
   }
+  return {invT,gasT,saldo};
 }
 async function main(){
-  const[gO,gI,gS,gF,gE,gP,gC]=await Promise.all([fs('Gastos_Operativos'),fs('Inversiones_Infraestructura'),fs('Sueldos_y_Jornales'),fs('Gastos_Fijos_Generales'),fs('Fondos_Entregados_Encargado'),fs('Pago_Hechos_Inversor'),fs('Control_Fondos_y_Rendiciones')]);
-  const gOp=parseCSV(gO),inv=parseCSV(gI),sue=parseCSV(gS),fij=parseCSV(gF),fEnc=parseCSV(gE),pInv=parseCSV(gP),ctrl=parseCSV(gC);
-  let invT=0,gasT=0,saldo=0;
-  ctrl.forEach(r=>{const k=Object.values(r)[0]||'',v=pm(Object.values(r)[1]);if(k.includes('Inversi')&&k.includes('Total'))invT=v;if(k.includes('Gastos')&&k.includes('Totales'))gasT=v;if(k.includes('Saldo'))saldo=v;});
-  const tOp=gOp.reduce((s,r)=>s+pm(r['Monto Pagado']),0),tInv=inv.reduce((s,r)=>s+pm(r['Monto Pagado']),0),tSue=sue.reduce((s,r)=>s+pm(r['Monto Pagado']),0),tFij=fij.reduce((s,r)=>s+pm(r['Monto Pagado']),0),tFE=fEnc.reduce((s,r)=>s+pm(r['Monto']),0),tPI=pInv.reduce((s,r)=>s+pm(r['Monto']),0);
+  const[gO,gI,gS,gF,gE,gP,gC]=await Promise.all([
+    fs('Gastos_Operativos'),fs('Inversiones_Infraestructura'),fs('Sueldos_y_Jornales'),
+    fs('Gastos_Fijos_Generales'),fs('Fondos_Entregados_Encargado'),fs('Pago_Hechos_Inversor'),
+    fs('Control_Fondos_y_Rendiciones')
+  ]);
+  const gOp=parseCSV(gO),inv=parseCSV(gI),sue=parseCSV(gS),fij=parseCSV(gF);
+  const fEnc=parseCSV(gE),pInv=parseCSV(gP);
+  const {invT,gasT,saldo}=parseCtrl(gC);
+  const tOp=gOp.reduce((s,r)=>s+pm(r['Monto Pagado']),0);
+  const tInv=inv.reduce((s,r)=>s+pm(r['Monto Pagado']),0);
+  const tSue=sue.reduce((s,r)=>s+pm(r['Monto Pagado']),0);
+  const tFij=fij.reduce((s,r)=>s+pm(r['Monto Pagado']),0);
+  const tFE=fEnc.reduce((s,r)=>s+pm(r['Monto']),0);
+  const tPI=pInv.reduce((s,r)=>s+pm(r['Monto']),0);
   const actM={},tiM={},cenM={},sueM={},mesM={},invM={},estM={},prvM={};
-  gOp.forEach(r=>{const a=r['Actividad']||'Otros';actM[a]=(actM[a]||0)+pm(r['Monto Pagado']);const t=r['Tipo_gasto']||'Otros';tiM[t]=(tiM[t]||0)+pm(r['Monto Pagado']);const p=r['Proveedor']||'Sin nombre';if(p)prvM[p]=(prvM[p]||0)+pm(r['Monto Pagado']);});
+  gOp.forEach(r=>{
+    const a=r['Actividad']||'Otros';actM[a]=(actM[a]||0)+pm(r['Monto Pagado']);
+    const t=r['Tipo_gasto']||'Otros';tiM[t]=(tiM[t]||0)+pm(r['Monto Pagado']);
+    const p=r['Proveedor']||'Sin nombre';if(p)prvM[p]=(prvM[p]||0)+pm(r['Monto Pagado']);
+  });
   [...gOp,...inv,...sue,...fij].forEach(r=>{const l=r['Centro_costo_lote']||'';if(!l)return;cenM[l]=(cenM[l]||0)+pm(r['Monto Pagado']);});
   sue.forEach(r=>{const c=r['Categoria']||r['Tipo_gasto']||'Otros';sueM[c]=(sueM[c]||0)+pm(r['Monto Pagado']);});
   const allR=[...gOp.map(r=>({...r,_t:'Op'})),...inv.map(r=>({...r,_t:'Inf'})),...sue.map(r=>({...r,_t:'Sue'})),...fij.map(r=>({...r,_t:'Fij'}))];
@@ -135,10 +169,29 @@ async function main(){
   const sueE=Object.entries(sueM).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]).slice(0,5);
   const tiE=Object.entries(tiM).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]);
   const estE=Object.entries(estM).filter(([,v])=>v>0);
-  document.getElementById('app').innerHTML=`<div class="totals-hero">
-    <div class="hero-card inv"><div class="hero-glow"></div><div class="hero-label">💰 Inversion Total</div><div class="hero-val">${fmt(invT)}</div><div class="hero-sub">Capital total inyectado al proyecto</div><div class="hero-eq"><div class="dot" style="background:#4ade80"></div><span style="color:#64748b">Fondos encargado + Pagos directos inversor</span></div></div>
-    <div class="hero-card gas"><div class="hero-glow"></div><div class="hero-label">📊 Gastos Totales</div><div class="hero-val">${fmt(gasT)}</div><div class="hero-sub">Operativos + Infraestructura + Sueldos + Fijos</div><div class="hero-eq" style="color:${invT===gasT?'#4ade80':'#fb923c'}"><div class="dot" style="background:${invT===gasT?'#4ade80':'#fb923c'}"></div><span>${invT===gasT?'Inversion = Gastos (balanceado)':'Diferencia: '+fmt(Math.abs(invT-gasT))}</span></div></div>
-    <div class="hero-card sal ${hasSaldo?'warn':'ok'}"><div class="hero-glow"></div><div class="hero-label">${hasSaldo?'Alerta':'Estado'} Saldo por Rendir</div><div class="hero-val">${fmt(saldo)}</div><div class="hero-sub">${hasSaldo?'Fondos sin comprobante pendientes':'Todos los fondos han sido rendidos'}</div><div class="saldo-pill ${hasSaldo?'saldo-warn':'saldo-ok'}">${hasSaldo?'PENDIENTE DE RENDICION':'SIN SALDO PENDIENTE'}</div></div>
+  document.getElementById('app').innerHTML=`
+  <div class="totals-hero">
+    <div class="hero-card inv"><div class="hero-glow"></div>
+      <div class="hero-label">💰 Inversion Total</div>
+      <div class="hero-val">${fmt(invT)}</div>
+      <div class="hero-sub">Capital total inyectado al proyecto</div>
+      <div class="hero-eq"><div class="dot" style="background:#4ade80"></div><span style="color:#64748b">Fondos encargado + Pagos directos inversor</span></div>
+    </div>
+    <div class="hero-card gas"><div class="hero-glow"></div>
+      <div class="hero-label">📊 Gastos Totales</div>
+      <div class="hero-val">${fmt(gasT)}</div>
+      <div class="hero-sub">Operativos + Infraestructura + Sueldos + Fijos</div>
+      <div class="hero-eq" style="color:${Math.abs(invT-gasT)<1?'#4ade80':'#fb923c'}">
+        <div class="dot" style="background:${Math.abs(invT-gasT)<1?'#4ade80':'#fb923c'}"></div>
+        <span>${Math.abs(invT-gasT)<1?'Inversion = Gastos (balanceado)':'Diferencia: '+fmt(Math.abs(invT-gasT))}</span>
+      </div>
+    </div>
+    <div class="hero-card sal ${hasSaldo?'warn':'ok'}"><div class="hero-glow"></div>
+      <div class="hero-label">${hasSaldo?'⚠ Alerta':'✅ Estado'} Saldo por Rendir</div>
+      <div class="hero-val">${fmt(saldo)}</div>
+      <div class="hero-sub">${hasSaldo?'Fondos sin comprobante pendientes':'Todos los fondos han sido rendidos'}</div>
+      <div class="saldo-pill ${hasSaldo?'saldo-warn':'saldo-ok'}">${hasSaldo?'PENDIENTE DE RENDICION':'SIN SALDO PENDIENTE'}</div>
+    </div>
   </div>
   <div class="kpi-grid">
     <div class="kpi-card g"><div class="kpi-icon">💸</div><div class="kpi-lbl">Fondos al Encargado</div><div class="kpi-val">${fmt(tFE)}</div><div class="kpi-sub">${fEnc.length} transferencias</div></div>
@@ -151,7 +204,8 @@ async function main(){
   <div class="chart-grid"><div class="chart-card c8"><div class="ct">Evolucion de Gastos por Categoria</div><div class="cs">Montos mensuales en COP</div><div style="height:270px"><canvas id="ch1"></canvas></div></div><div class="chart-card c4"><div class="ct">Distribucion Total de Egresos</div><div class="cs">Por categoria de gasto</div><div style="height:270px"><canvas id="ch2"></canvas></div></div></div>
   <div class="chart-grid"><div class="chart-card c5"><div class="ct">Gastos Operativos por Actividad</div><div class="cs">Actividades productivas</div><div style="height:260px"><canvas id="ch3"></canvas></div></div><div class="chart-card c4"><div class="ct">Gastos por Centro de Costo</div><div class="cs">Distribucion entre lotes</div><div style="height:260px"><canvas id="ch4"></canvas></div></div><div class="chart-card c3"><div class="ct">Sueldos por Categoria</div><div class="cs">Distribucion de nomina</div><div style="height:260px"><canvas id="ch5"></canvas></div></div></div>
   <div class="chart-grid"><div class="chart-card c4"><div class="ct">Top Proveedores</div><div class="cs">Por monto total pagado</div><div id="pv"></div></div><div class="chart-card c5"><div class="ct">Pagos del Inversor por Mes</div><div class="cs">Flujo de inyeccion de capital</div><div style="height:220px"><canvas id="ch6"></canvas></div></div><div class="chart-card c3"><div class="ct">Estado Rendicion de Fondos</div><div class="cs">Fondos al encargado</div><div style="height:220px"><canvas id="ch7"></canvas></div></div></div>
-  <div class="chart-grid"><div class="chart-card c7"><div class="ct">Ultimos Movimientos - Gastos Operativos</div><div class="cs">Ordenados de mas reciente a mas antiguo</div><div class="tw" id="tbl"></div></div><div class="chart-card c5"><div class="ct">Tipos de Gasto Operativo</div><div class="cs">Desglose por categoria</div><div style="height:260px"><canvas id="ch8"></canvas></div></div></div>`;
+  <div class="chart-grid"><div class="chart-card c7"><div class="ct">Ultimos Movimientos - Gastos Operativos</div><div class="cs">Ordenados de mas reciente a mas antiguo</div><div class="tw" id="tbl"></div></div><div class="chart-card c5"><div class="ct">Tipos de Gasto Operativo</div><div class="cs">Desglose por categoria</div><div style="height:260px"><canvas id="ch8"></canvas></div></div></div>
+  `;
   Chart.register(ChartDataLabels);
   const bo={responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:TC,font:{size:11},boxWidth:12,padding:10}},datalabels:{display:false}}};
   new Chart(document.getElementById('ch1'),{type:'bar',data:{labels:ML,datasets:[{label:'Operativos',data:mesSrt.map(([,v])=>v.Op),backgroundColor:'rgba(74,222,128,0.8)',borderRadius:6,borderSkipped:false},{label:'Infraestructura',data:mesSrt.map(([,v])=>v.Inf),backgroundColor:'rgba(96,165,250,0.8)',borderRadius:6,borderSkipped:false},{label:'Sueldos',data:mesSrt.map(([,v])=>v.Sue),backgroundColor:'rgba(244,114,182,0.8)',borderRadius:6,borderSkipped:false},{label:'Fijos',data:mesSrt.map(([,v])=>v.Fij),backgroundColor:'rgba(251,146,60,0.8)',borderRadius:6,borderSkipped:false}]},options:{...bo,scales:{x:{stacked:true,ticks:{color:TC,font:{size:11}},grid:{color:G}},y:{stacked:true,ticks:{color:TC,font:{size:10},callback:v=>'$'+(v/1000000).toFixed(1)+'M'},grid:{color:G}}},plugins:{...bo.plugins,tooltip:{callbacks:{label:ctx=>ctx.dataset.label+': '+fmt(ctx.raw)}}}}});
@@ -167,7 +221,7 @@ async function main(){
   document.getElementById('tbl').innerHTML=th+'</tbody></table>';
   new Chart(document.getElementById('ch8'),{type:'bar',data:{labels:tiE.map(([k])=>k),datasets:[{data:tiE.map(([,v])=>v),backgroundColor:COLORS.slice(0,tiE.length).map(c=>c+'bb'),borderRadius:10,borderSkipped:false}]},options:{...bo,scales:{x:{ticks:{color:TC,font:{size:10}},grid:{display:false}},y:{ticks:{color:TC,font:{size:10},callback:v=>'$'+(v/1000000).toFixed(0)+'M'},grid:{color:G}}},plugins:{...bo.plugins,legend:{display:false},datalabels:{display:true,anchor:'end',align:'top',color:TC,font:{size:9,weight:'bold'},formatter:v=>'$'+(v/1000000).toFixed(1)+'M'},tooltip:{callbacks:{label:ctx=>fmt(ctx.raw)}}}}});
 }
-main().catch(e=>{document.getElementById('app').innerHTML='<div class="loading" style="color:#ef4444">Error cargando datos: '+e.message+'<br><small>Asegurate de que el Google Sheet sea publico (Compartir > Cualquiera con el link)</small></div>';});
+main().catch(e=>{document.getElementById('app').innerHTML='<div class="loading" style="color:#ef4444">Error: '+e.message+'</div>';});
 </script>
 </body>
 </html>
