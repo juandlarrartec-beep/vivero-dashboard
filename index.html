@@ -101,7 +101,7 @@ function pl(row){
     else c+=row[i];
   }r.push(c);return r;
 }
-function pm(s){if(!s)return 0;return parseFloat(s.replace(/[\$,\s]/g,'').replace(/\./g,''))||0;}
+function pm(s){if(!s)return 0;let c=s.replace(/[\$\s]/g,'').replace(/,/g,'');return parseFloat(c)||0;}
 function fmt(n){return'$'+Math.round(n).toLocaleString('es-CO');}
 function ts(s){if(!s)return 0;const p=s.split('/');if(p.length<3)return 0;return new Date(parseInt(p[2]),parseInt(p[1])-1,parseInt(p[0])).getTime();}
 function dl(s){if(!s)return s;const p=s.split('/');if(p.length<3)return s;const M=['','Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];return p[0]+' '+M[parseInt(p[1])]+' '+p[2];}
