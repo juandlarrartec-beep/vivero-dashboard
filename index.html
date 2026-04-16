@@ -330,14 +330,12 @@ function totalsFromCtrl(ctrl){
   };
 }
 
-function unifiedMovs({op,infra,sj,gf,fe,pi}){
+function unifiedMovs({op,infra,sj,gf}){
   const movs = [];
   op.forEach(r=>movs.push({tipo:'op',label:'Operativo',fecha:r['Fecha de alta'],monto:pm(r['Monto Pagado']),area:r['Actividad']||r['Tipo_gasto']||'-',ente:r['Proveedor']||'-',cc:r['Centro_costo_lote']||'-',doc:r['Documento']||'-'}));
   infra.forEach(r=>movs.push({tipo:'infra',label:'Infraestructura',fecha:r['Fecha de alta'],monto:pm(r['Monto Pagado']),area:r['Actividad']||r['Tipo_gasto']||'-',ente:r['Proveedor']||'-',cc:r['Centro_costo_lote']||'-',doc:r['Documento']||'-'}));
   sj.forEach(r=>movs.push({tipo:'sj',label:'Sueldo',fecha:r['Fecha de alta'],monto:pm(r['Monto Pagado']),area:r['Categoria']||r['Tipo_gasto']||'-',ente:r['Proveedor']||'-',cc:r['Centro_costo_lote']||'-',doc:r['Documento']||'-'}));
   gf.forEach(r=>movs.push({tipo:'gf',label:'Gasto Fijo',fecha:r['Fecha de alta'],monto:pm(r['Monto Pagado']),area:r['Categoria']||'-',ente:r['Proveedor']||'-',cc:r['Centro_costo_lote']||'-',doc:r['Documento']||'-'}));
-  fe.forEach(r=>movs.push({tipo:'fe',label:'Fondos Encargado',fecha:r['Fecha de alta'],monto:pm(r['Monto']),area:r['Motivo']||'Transferencia',ente:r['Destino ']||r['Destino']||'Encargado',cc:r['Centro_costo']||'-',doc:'-'}));
-  pi.forEach(r=>movs.push({tipo:'pi',label:'Pago Inversor',fecha:r['Fecha de alta'],monto:pm(r['Monto']),area:r['Motivo']||'Pago directo',ente:r['Destino ']||r['Destino']||'-',cc:r['Centro_costo']||'-',doc:'-'}));
   return movs.sort((a,b)=>ts(b.fecha)-ts(a.fecha));
 }
 
@@ -414,8 +412,8 @@ function renderGastos(){
       </div>
 
       <div class="card span-12">
-        <div class="ttl">\u00daltimos movimientos <span class="badge" id="movs-count"></span></div>
-        <div class="desc">Lista unificada de los \u00faltimos gastos cargados en cualquier categor\u00eda. Cada fila indica de qu\u00e9 tipo y \u00e1rea es.</div>
+        <div class="ttl">\u00daltimos gastos cargados <span class="badge" id="movs-count"></span></div>
+        <div class="desc">Gastos reales ejecutados (operativos, infraestructura, sueldos y fijos). Excluye registros de fondos al encargado y pagos del inversor para evitar duplicar el mismo movimiento.</div>
         <div style="overflow-x:auto;border:1px solid var(--border);border-radius:12px"><table class="movs">
           <thead><tr><th>Fecha</th><th>Tipo</th><th>\u00c1rea / Actividad</th><th class="hide-sm">Proveedor / Destino</th><th>Monto</th><th class="hide-sm">Centro Costo</th><th class="hide-sm">Doc</th></tr></thead>
           <tbody id="movs-body"></tbody>
